@@ -22,11 +22,11 @@
 }
 
 .button:hover {
-    background-color: rgb(25, 120, 210);
+    filter: brightness(90%);
 }
 
 .button:focus {
-    background-color: rgb(55, 155, 240);
+    filter: brightness(120%);
 }
 
 .button-content {

@@ -14,8 +14,8 @@
     border: none;
     border-radius: 5px;
 
-    /* Content padding (vw - 1% of viewport width) */
-    padding: 0.5vw;
+    /* Content padding */
+    padding: 1em;
 
     /* Change cursor to pointer */
     cursor: pointer;

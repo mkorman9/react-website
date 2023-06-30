@@ -28,3 +28,13 @@
 .button:focus {
     background-color: rgb(55, 155, 240);
 }
+
+.button-content {
+    display: inline-flex;
+}
+
+.button-icon {
+    width: 1em;
+    height: 1em;
+    margin-right: 0.5em;
+}

@@ -1,0 +1,30 @@
+.button {
+    /* Display in a single line */
+    display: inline-block;
+
+    /* Colors */
+    background-color: rgb(43, 134, 226);
+    color: white;
+
+    /* Center content */
+    text-align: center;
+    align-items: center;
+
+    /* Rounded corners, no border */
+    border: none;
+    border-radius: 5px;
+
+    /* Content padding (vw - 1% of viewport width) */
+    padding: 0.5vw;
+
+    /* Change cursor to pointer */
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: rgb(25, 120, 210);
+}
+
+.button:focus {
+    background-color: rgb(55, 155, 240);
+}

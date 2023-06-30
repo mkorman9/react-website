@@ -15,16 +15,15 @@ const Button = (props: ButtonProps) => {
         props.onClick && props.onClick();
     };
 
-    const icon = (() => {
-        if (props.intent === 'add') {
-            return AddIcon;
-        }
-    })();
+    const icon = ({
+        'none': null,
+        'add': AddIcon
+    })[props.intent || 'none'];
 
     return (
         <button type='button' className='button' onClick={onClick}>
             <div className='button-content'>
-                {(props.intent && props.intent != 'none') &&
+                {icon &&
                     <img className='button-icon' src={icon} alt='' />
                 }
                 <span>{ props.text }</span>

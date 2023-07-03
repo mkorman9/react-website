@@ -1,40 +1,40 @@
 .button {
-    /* Display in a single line */
-    display: inline-block;
+  /* Display in a single line */
+  display: inline-block;
 
-    /* Colors */
-    background-color: rgb(43, 134, 226);
-    color: white;
+  /* Colors */
+  background-color: rgb(43, 134, 226);
+  color: white;
 
-    /* Center content */
-    text-align: center;
-    align-items: center;
+  /* Center content */
+  text-align: center;
+  align-items: center;
 
-    /* Rounded corners, no border */
-    border: none;
-    border-radius: 5px;
+  /* Rounded corners, no border */
+  border: none;
+  border-radius: 5px;
 
-    /* Content padding */
-    padding: 1em;
+  /* Content padding */
+  padding: 1em;
 
-    /* Change cursor to pointer */
-    cursor: pointer;
+  /* Change cursor to pointer */
+  cursor: pointer;
 }
 
 .button:hover {
-    filter: brightness(90%);
+  filter: brightness(90%);
 }
 
 .button:focus {
-    filter: brightness(120%);
+  filter: brightness(120%);
 }
 
 .button-content {
-    display: inline-flex;
+  display: inline-flex;
 }
 
 .button-icon {
-    width: 1em;
-    height: 1em;
-    margin-right: 0.5em;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.5em;
 }

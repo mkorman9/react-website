@@ -9,7 +9,7 @@ export interface Article {
 
 export const useArticles = () => {
   const [articles, setArticles] = useState<Article[]>([]);
-  const [isLoaded, setIsLoaded] = useState<boolean>(false);
+  const [articlesLoaded, setArticlesLoaded] = useState<boolean>(false);
 
   useEffect(() => {
     getDocs(collection(db, 'articles'))
@@ -18,11 +18,11 @@ export const useArticles = () => {
         setArticles(data);
       })
       .catch(e => console.error(e))
-      .finally(() => setIsLoaded(true));
+      .finally(() => setArticlesLoaded(true));
   }, []);
 
   return {
     articles,
-    isLoaded
+    articlesLoaded
   };
 };

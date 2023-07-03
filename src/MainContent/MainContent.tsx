@@ -1,17 +1,33 @@
 import './MainContent.css';
+import { useEffect, useState } from 'react';
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../firebase';
+
+interface Article {
+  title: string;
+  content: string;
+}
 
 const MainContent = () => {
+  const [articles, setArticles] = useState<Article[]>([]);
+
+  useEffect(() => {
+    getDocs(collection(db, 'articles'))
+      .then(snapshot => {
+        const data = snapshot.docs.map(doc => doc.data() as Article);
+        setArticles(data);
+      })
+      .catch(e => console.error(e));
+  }, []);
+
   return (
     <article className="content-container">
-      <h1>Lorem Ipsum</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dapibus diam rutrum, tempor justo et, vulputate
-        libero. Donec eu eros bibendum, consequat quam a, lobortis mi. Morbi sit amet est consectetur augue ultricies
-        interdum. Curabitur sed quam purus. Fusce molestie, nulla id interdum sodales, justo erat commodo urna, quis
-        eleifend ex nibh vel elit. Aliquam semper urna nisi, a bibendum nulla ornare vitae. Proin ultrices nisl id mi
-        dictum, id efficitur enim commodo. Nunc vitae varius erat, vel interdum risus. Donec eget consequat augue.
-        Nullam sit amet felis non est semper lacinia at sed enim.
-      </p>
+      {articles.map((article, i) => (
+        <div key={i} className="content-article">
+          <h1>{article.title}</h1>
+          <p>{article.content}</p>
+        </div>
+      ))}
     </article>
   );
 };

@@ -7,7 +7,7 @@ const App = () => {
   return (
     <>
       <NavigationBar />
-      <MainContent />      
+      <MainContent />
       {/* <Button
         intent='add'
         text='Click me!'

@@ -1,5 +1,5 @@
 import './MainContent.css';
-import { useArticles } from './articles';
+import { useArticles } from '../hooks/articles';
 
 const MainContent = () => {
   const { articles } = useArticles();

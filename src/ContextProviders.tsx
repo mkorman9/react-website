@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from 'react';
-import { AuthProvider } from './auth';
+import { AuthProvider } from './hooks/auth';
 
 const CONTEXT_PROVIDERS: React.FC<PropsWithChildren<unknown>>[] = [AuthProvider];
 

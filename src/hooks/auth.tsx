@@ -1,30 +1,21 @@
 import { PropsWithChildren, createContext, useContext, useEffect, useState } from 'react';
-import { onAuthStateChanged } from 'firebase/auth';
+import { User, onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../firebase';
 
 export interface AuthContextType {
   isAuthenticated: boolean;
-  userId: string;
-  userDisplayName: string;
+  user: User;
 }
 
 const AuthContext = createContext<AuthContextType>({} as AuthContextType);
 
 export const AuthProvider = (props: PropsWithChildren<unknown>) => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
-  const [userId, setUserId] = useState<string>('');
-  const [userDisplayName, setUserDisplayName] = useState<string>('');
+  const [user, setUser] = useState<User>({} as User);
 
   useEffect(() => {
     onAuthStateChanged(auth, user => {
-      if (user) {
-        setUserId(user.uid);
-        setUserDisplayName(user.displayName ?? '');
-      } else {
-        setUserId('');
-        setUserDisplayName('');
-      }
-
+      setUser(user as User);
       setIsAuthenticated(!!user);
     });
   }, []);
@@ -33,8 +24,7 @@ export const AuthProvider = (props: PropsWithChildren<unknown>) => {
     <AuthContext.Provider
       value={{
         isAuthenticated,
-        userId,
-        userDisplayName
+        user
       }}
     >
       {props.children}

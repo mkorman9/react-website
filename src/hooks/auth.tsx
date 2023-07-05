@@ -3,28 +3,24 @@ import { User, onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../firebase';
 
 export interface AuthContextType {
-  isAuthenticated: boolean;
-  user: User;
+  principal: User | null;
 }
 
 const AuthContext = createContext<AuthContextType>({} as AuthContextType);
 
 export const AuthProvider = (props: PropsWithChildren<unknown>) => {
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
-  const [user, setUser] = useState<User>({} as User);
+  const [principal, setPrincipal] = useState<User | null>(null);
 
   useEffect(() => {
     onAuthStateChanged(auth, user => {
-      setUser(user as User);
-      setIsAuthenticated(!!user);
+      setPrincipal(user);
     });
   }, []);
 
   return (
     <AuthContext.Provider
       value={{
-        isAuthenticated,
-        user
+        principal
       }}
     >
       {props.children}

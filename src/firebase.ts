@@ -13,8 +13,8 @@ const firebaseConfig = {
 };
 
 export const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
 export const auth = getAuth(app);
+export const db = getFirestore(app);
 
 const devMode = process.env.REACT_APP_DEV_MODE?.toLowerCase() === 'true';
 if (devMode) {

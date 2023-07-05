@@ -2,7 +2,7 @@ FROM node:18 AS builder
 
 COPY . .
 RUN npm ci && \
-  GENERATE_SOURCEMAP=false npm run build
+  GENERATE_SOURCEMAP=false REACT_APP_DEV_MODE=false npm run build
 
 FROM nginx:1.25
 

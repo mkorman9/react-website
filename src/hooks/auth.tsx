@@ -6,7 +6,9 @@ export interface AuthContextType {
   principal: User | null;
 }
 
-const AuthContext = createContext<AuthContextType>({} as AuthContextType);
+const AuthContext = createContext<AuthContextType>({
+  principal: null
+});
 
 export const AuthProvider = (props: PropsWithChildren<unknown>) => {
   const [principal, setPrincipal] = useState<User | null>(null);

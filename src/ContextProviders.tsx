@@ -1,7 +1,9 @@
 import React, { PropsWithChildren } from 'react';
 import { AuthProvider } from './hooks/auth';
 
-const CONTEXT_PROVIDERS: React.FC<PropsWithChildren<unknown>>[] = [AuthProvider];
+const CONTEXT_PROVIDERS: React.FC<PropsWithChildren<unknown>>[] = [
+  AuthProvider
+];
 
 const ContextProviders = (props: PropsWithChildren<unknown>) => {
   return (

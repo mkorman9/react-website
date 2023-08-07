@@ -3,19 +3,17 @@ import { User, onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../firebase';
 
 export interface AuthContextType {
-  principal: User | null;
+  principal?: User;
 }
 
-const AuthContext = createContext<AuthContextType>({
-  principal: null
-});
+const AuthContext = createContext<AuthContextType>({});
 
 export const AuthProvider = (props: PropsWithChildren<unknown>) => {
-  const [principal, setPrincipal] = useState<User | null>(null);
+  const [principal, setPrincipal] = useState<User | undefined>(undefined);
 
   useEffect(() => {
     onAuthStateChanged(auth, user => {
-      setPrincipal(user);
+      setPrincipal(user || undefined);
     });
   }, []);
 

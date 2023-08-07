@@ -3,19 +3,29 @@
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "prettier"
+    "plugin:react/recommended"
   ],
   "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": 2018
   },
   "plugins": [
-    "prettier",
     "react"
   ],
   "rules": {
-    "prettier/prettier": "warn",
+    "semi": ["warn", "always"],
+    "arrow-parens": ["warn", "as-needed"],
+    "indent": ["warn", 2],
+    "quotes": [
+      "warn",
+      "single",
+      {
+        "avoidEscape": true,
+        "allowTemplateLiterals": true
+      }
+    ],
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-unused-vars": "off",
     "react/react-in-jsx-scope": "off"
   },
   "settings": {

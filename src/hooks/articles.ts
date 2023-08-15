@@ -12,7 +12,11 @@ export const useArticles = () => {
   const [articlesLoadingError, setArticlesLoadingError] = useState<unknown>(null);
   const [articlesLoaded, setArticlesLoaded] = useState<boolean>(false);
 
-  useEffect(() => {
+  const refreshArticles = () => {
+    setArticles([]);
+    setArticlesLoaded(false);
+    setArticlesLoadingError(null);
+
     getDocs(collection(db, 'articles'))
       .then(snapshot => {
         const data = snapshot.docs.map(doc => doc.data() as Article);
@@ -23,7 +27,9 @@ export const useArticles = () => {
         setArticlesLoadingError(e);
       })
       .finally(() => setArticlesLoaded(true));
-  }, []);
+  };
+
+  useEffect(() => refreshArticles(), []);
 
   return {
     articles,

@@ -1,8 +1,12 @@
 .content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   margin-top: 1em;
 }
 
 .content-article {
-
+  width: max(95%, 480px);
+  overflow-wrap: break-word;
 }

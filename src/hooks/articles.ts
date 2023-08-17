@@ -34,6 +34,7 @@ export const useArticles = () => {
   return {
     articles,
     articlesLoadingError,
-    articlesLoaded
+    articlesLoaded,
+    refreshArticles
   };
 };

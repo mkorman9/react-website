@@ -10,4 +10,4 @@ RUN rm -f /usr/share/nginx/html/*
 COPY --chown=nginx:nginx --from=builder build/ /usr/share/nginx/html/
 COPY --chown=nginx:nginx --from=builder .docker/default.conf /etc/nginx/conf.d/default.conf
 
-EXPOSE 80
+EXPOSE 8080

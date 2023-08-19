@@ -8,7 +8,12 @@ const SearchBar = () => {
 
   return (
     <form onSubmit={onSearch}>
-      <input id="search" type="text" className="search-bar" />
+      <input 
+        id="search"
+        type="text"
+        placeholder="Search..."
+        className="search-bar" 
+      />
     </form>
   );
 };

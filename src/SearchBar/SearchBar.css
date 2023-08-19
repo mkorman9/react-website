@@ -6,3 +6,7 @@
   border: 0px;
   color: #ffffff;
 }
+
+.search-bar::placeholder {
+  font-size: 15px;
+}

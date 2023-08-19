@@ -33,10 +33,6 @@
   font-size: 24px;
 }
 
-.nav-fill-space {
-  flex: auto;
-}
-
 @media (max-width: 1000px) {
   .nav-optional {
     display: none;

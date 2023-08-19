@@ -1,5 +1,6 @@
 import Button from '../Button/Button';
 import SearchBar from '../SearchBar/SearchBar';
+import logo from '../icons/logo.svg';
 import './NavigationBar.css';
 
 const NavigationBar = () => {
@@ -7,7 +8,9 @@ const NavigationBar = () => {
     <header className="nav-bar">
       <div className="nav-links">
         <div className="nav-item">
-          LOGO
+          <a href="#">
+            <img src={logo} className="nav-logo" />
+          </a>
         </div>
         <div className="nav-item">
           BROWSE

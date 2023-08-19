@@ -17,14 +17,18 @@ const NavigationBar = () => {
 
       <div className="nav-fill-space"></div>
 
-      <div className="nav-item">
+      <div className="nav-item nav-optional">
         <SearchBar />
       </div>
 
       <div className="nav-fill-space"></div>
 
       <div className="nav-item">
-        <Button text="Log In" />
+        Log In
+      </div>
+
+      <div className="nav-item">
+        <Button text="Sign In" />
       </div>
     </header>
   );

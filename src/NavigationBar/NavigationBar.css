@@ -20,3 +20,9 @@
 .nav-fill-space {
   flex: auto;
 }
+
+@media (max-width: 1300px) {
+  .nav-optional {
+    display: none;
+  }
+}

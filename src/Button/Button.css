@@ -30,6 +30,7 @@
 
 .button-content {
   display: inline-flex;
+  font-size: 20px;
 }
 
 .button-icon {

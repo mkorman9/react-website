@@ -2,7 +2,12 @@
   position: sticky;
   display: flex;
   height: 60px;
-  background-color: LightBlue;
+  background-color: #24272C;
+}
+
+.nav-bar a {
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .nav-logo {
@@ -35,7 +40,7 @@
   width: 100px;
   margin: 0.5em;
   text-align: center;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 @media (max-width: 1000px) {

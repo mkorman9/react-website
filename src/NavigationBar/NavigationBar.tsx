@@ -32,7 +32,7 @@ const NavigationBar = () => {
         </div>
 
         <div className="nav-item">
-          <Button text="Sign In" />
+          <Button text="Sign Up" />
         </div>
       </div>
     </header>

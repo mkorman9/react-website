@@ -12,10 +12,10 @@ const NavigationBar = () => {
             <img src={logo} className="nav-logo" />
           </a>
         </div>
-        <div className="nav-item">
+        <div className="nav-item nav-optional">
           BROWSE
         </div>
-        <div className="nav-item">
+        <div className="nav-item nav-optional">
           ...
         </div>
       </div>

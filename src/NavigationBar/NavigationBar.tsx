@@ -5,30 +5,32 @@ import './NavigationBar.css';
 const NavigationBar = () => {
   return (
     <header className="nav-bar">
-      <div className="nav-item">
-        LOGO
-      </div>
-      <div className="nav-item">
-        BROWSE
-      </div>
-      <div className="nav-item">
-        ...
-      </div>
-
-      <div className="nav-fill-space"></div>
-
-      <div className="nav-item nav-optional">
-        <SearchBar />
+      <div className="nav-links">
+        <div className="nav-item">
+          LOGO
+        </div>
+        <div className="nav-item">
+          BROWSE
+        </div>
+        <div className="nav-item">
+          ...
+        </div>
       </div>
 
-      <div className="nav-fill-space"></div>
-
-      <div className="nav-item">
-        Log In
+      <div className="nav-search">
+        <div className="nav-optional">
+          <SearchBar />
+        </div>
       </div>
 
-      <div className="nav-item">
-        <Button text="Sign In" />
+      <div className="nav-login">
+        <div className="nav-item">
+          <a href="#">Log In</a>
+        </div>
+
+        <div className="nav-item">
+          <Button text="Sign In" />
+        </div>
       </div>
     </header>
   );
